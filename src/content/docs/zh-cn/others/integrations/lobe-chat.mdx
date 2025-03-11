@@ -3,11 +3,11 @@ title: 集成到 Lobe Chat 操作台
 description: 集成到 Lobe Chat 操作台
 ---
 
-此篇文档介绍如何将 Monkeys 的 OpenAI 兼容大语言模型接口接入到 [Lobe Chat](https://github.com/lobehub/lobe-chat) 中。Lobe Chat 的安装说明请见其官方文档。
+此篇文档介绍如何将 AgentUniverse 的 OpenAI 兼容大语言模型接口接入到 [Lobe Chat](https://github.com/lobehub/lobe-chat) 中。Lobe Chat 的安装说明请见其官方文档。
 
-这里我们以通过 VLLM 部署的 [https://huggingface.co/alpindale/c4ai-command-r-plus-GPTQ](https://huggingface.co/alpindale/c4ai-command-r-plus-GPTQ) 模型为例，我们将首先集成到 Monkeys 工作流中，对外暴露标准的 OpenAI 接口，然后再将其接入到 Lobe Chat 中。
+这里我们以通过 VLLM 部署的 [https://huggingface.co/alpindale/c4ai-command-r-plus-GPTQ](https://huggingface.co/alpindale/c4ai-command-r-plus-GPTQ) 模型为例，我们将首先集成到 AgentUniverse 工作流中，对外暴露标准的 OpenAI 接口，然后再将其接入到 Lobe Chat 中。
 
-### 1. 在 Monkeys 控制台创建大语言模型工作流
+### 1. 在 AgentUniverse 控制台创建大语言模型工作流
 
 工作流的创建过程详情见 [预置工具（大语言模型）](/docs/zh-cn/tools/builtin-tools-large-language-models)。
 
@@ -19,7 +19,7 @@ description: 集成到 Lobe Chat 操作台
 
 2. 在**开始**节点的**API 设置**中，设置*模型名称**名称为你希望的模型名称，这里我们设置为 `command-r`。
 
-> 默认情况下，Monkeys 的 OpenAI 接口对应的 `model` 参数为工作流 ID，你可以通过修改此值来设置模型名称。（同一个团队下模型名称不可重复）
+> 默认情况下，AgentUniverse 的 OpenAI 接口对应的 `model` 参数为工作流 ID，你可以通过修改此值来设置模型名称。（同一个团队下模型名称不可重复）
 
 ![设置模型名称](~/assets/others/integrations/lobe-chat/config-model-name.png)
 
@@ -36,10 +36,10 @@ description: 集成到 Lobe Chat 操作台
 
 在 Lobe Chat 的**语言模型**设置中，开启 OpenAI 接口，填入以下信息：
 
-- **API Key**：Monkeys 的 API Key，可在设置页面创建或获取。
-- **API 代理地址**: 填写 Monkeys 服务的地址，注意需要有 `/v1` 后缀。
+- **API Key**：AgentUniverse 的 API Key，可在设置页面创建或获取。
+- **API 代理地址**: 填写 AgentUniverse 服务的地址，注意需要有 `/v1` 后缀。
 
-![导入 Monkeys 接口](~/assets/others/integrations/lobe-chat/import-monkeys-api.png)
+![导入 AgentUniverse 接口](~/assets/others/integrations/lobe-chat/import-monkeys-api.png)
 
 
 #### 拉取模型列表
@@ -52,7 +52,7 @@ description: 集成到 Lobe Chat 操作台
 
 Lobe Chat 默认会使用 `gpt-3.5-turbo` 模型进行连通性检测，如果你的团队没有配置 `gpt-3.5-turbo` 模型，会检测失败，可以跳过这个步骤。
 
-### 3. 在 Lobe Chat 中使用 Monkeys 的大语言模型接口
+### 3. 在 Lobe Chat 中使用 AgentUniverse 的大语言模型接口
 
 选用之前创建好的模型：
 

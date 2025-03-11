@@ -3,9 +3,9 @@ title: Integrate with One API
 description: Integrate with One API
 ---
 
-This document describes how to integrate Monkeys' OpenAI-compatible large language model interface into [One API](https://github.com/songquanpeng/one-api). For installation instructions of One API, please refer to its official documentation.
+This document describes how to integrate AgentUniverse' OpenAI-compatible large language model interface into [One API](https://github.com/songquanpeng/one-api). For installation instructions of One API, please refer to its official documentation.
 
-### 1. Create a large language model workflow in the Monkeys console
+### 1. Create a large language model workflow in the AgentUniverse console
 
 For detailed steps on creating a workflow, see [Built-in Tools (Large Language Models)](/docs/en/tools/builtin-tools-large-language-models).
 
@@ -17,7 +17,7 @@ There are a few points to note:
 
 2. In the **API Settings** of the **Start** node, set the *Model Name* to the desired model name. Here we set it to `command-r`.
 
-> By default, the `model` parameter of Monkeys' OpenAI interface corresponds to the workflow ID. You can modify this value to set the model name. (Model names must be unique within the same team)
+> By default, the `model` parameter of AgentUniverse' OpenAI interface corresponds to the workflow ID. You can modify this value to set the model name. (Model names must be unique within the same team)
 
 ![Set Model Name](~/assets/others/integrations/lobe-chat/config-model-name.png)
 
@@ -37,8 +37,8 @@ In the **Channels** page of One API, create a new channel and fill in the follow
 - **Name**: Enter any name.
 - **Group**: Enter any group.
 - **Model**: Enter the custom model name we set above (see step 1).
-- **Key**: Monkeys' API Key, which can be created or obtained on the settings page.
-- **Proxy**: Fill in the address of the Monkeys service, without the `/v1` suffix, e.g., `https://ai.infmonkeys.com`.
+- **Key**: AgentUniverse' API Key, which can be created or obtained on the settings page.
+- **Proxy**: Fill in the address of the AgentUniverse service, without the `/v1` suffix, e.g., `https://ai.infmonkeys.com`.
 
 ![Add Channel](~/assets/others/integrations/one-api/add-channel.png)
 

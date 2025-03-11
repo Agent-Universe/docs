@@ -3,9 +3,9 @@ title: 集成到 One API
 description: 集成到 One API
 ---
 
-此篇文档介绍如何将 Monkeys 的 OpenAI 兼容大语言模型接口接入到 [One API](https://github.com/songquanpeng/one-api) 中。One API 的安装说明请见其官方文档。
+此篇文档介绍如何将 AgentUniverse 的 OpenAI 兼容大语言模型接口接入到 [One API](https://github.com/songquanpeng/one-api) 中。One API 的安装说明请见其官方文档。
 
-### 1. 在 Monkeys 控制台创建大语言模型工作流
+### 1. 在 AgentUniverse 控制台创建大语言模型工作流
 
 工作流的创建过程详情见 [预置工具（大语言模型）](/docs/zh-cn/tools/builtin-tools-large-language-models)。
 
@@ -17,7 +17,7 @@ description: 集成到 One API
 
 2. 在**开始**节点的**API 设置**中，设置*模型名称**名称为你希望的模型名称，这里我们设置为 `command-r`。
 
-> 默认情况下，Monkeys 的 OpenAI 接口对应的 `model` 参数为工作流 ID，你可以通过修改此值来设置模型名称。（同一个团队下模型名称不可重复）
+> 默认情况下，AgentUniverse 的 OpenAI 接口对应的 `model` 参数为工作流 ID，你可以通过修改此值来设置模型名称。（同一个团队下模型名称不可重复）
 
 ![设置模型名称](~/assets/others/integrations/lobe-chat/config-model-name.png)
 
@@ -38,10 +38,10 @@ description: 集成到 One API
 - **名称**: 填入任意名称。
 - **分组**: 填入任意分组。
 - **模型**: 输入上面我们设置的自定义模型名称（见第一步设置的模型名称）
-- **密钥**: Monkeys 的 API Key，可在设置页面创建或获取。
-- **代理**: 填写 Monkeys 服务的地址，注意后面没有 `/v1` 后缀，如 `https://ai.infmonkeys.com`。
+- **密钥**: AgentUniverse 的 API Key，可在设置页面创建或获取。
+- **代理**: 填写 AgentUniverse 服务的地址，注意后面没有 `/v1` 后缀，如 `https://ai.infmonkeys.com`。
 
-![导入 Monkeys 接口](~/assets/others/integrations/one-api/add-channel.png)
+![导入 AgentUniverse 接口](~/assets/others/integrations/one-api/add-channel.png)
 
 点击创建。
 

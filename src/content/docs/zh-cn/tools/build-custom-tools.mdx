@@ -5,7 +5,7 @@ description: 开发自定义工具
 
 ## 工具（Tools）定义
 
-工具（Tools）可以扩展 Monkeys 平台的能力，一些常见的 Tools 如下：
+工具（Tools）可以扩展 AgentUniverse 平台的能力，一些常见的 Tools 如下：
 
 - LLM: 提供大语言模型对话的能力
 - 知识库: 为 LLM 提供知识库问答的能力
@@ -15,7 +15,7 @@ description: 开发自定义工具
 - 图像生成: 提供图像生成的能力
 - 小红书、Twitter、Instagram、微博等社交平台的自动化操作
 
-等等等等，任何能够通过 API 调用的服务都可以作为一个 Tool，集成到 Monkeys 平台中。
+等等等等，任何能够通过 API 调用的服务都可以作为一个 Tool，集成到 AgentUniverse 平台中。
 
 ## 如何开发自定义 Tool
 
@@ -28,7 +28,7 @@ description: 开发自定义工具
 1. 使用 JSON 定义你的 Tool.
 2. 编写 HTTP 接口，实现你的 Tool 逻辑.
 3. 部署你的 Tool.
-4. 在 Monkeys 平台中添加你的 Tool.
+4. 在 AgentUniverse 平台中添加你的 Tool.
 
 ## 示例：使用 Python 开发一个查询天气的 Tool
 
@@ -55,7 +55,7 @@ pip install flask flask_restx requests
 `manifest.json` 接口描述了你的 Tool 的基本信息：
 
 - schema_version: 当前版本号，目前只支持 `v1`
-- display_name: 在 Monkeys 平台中显示的名称
+- display_name: 在 AgentUniverse 平台中显示的名称
 - namespace: 命名空间，用于区分不同的 Tool，建议使用 `monkey_tools_` 前缀，如 `monkey_tools_my_awesome_weather_tool`。此命名空间必须全局唯一。
 - auth: 
   - type: 认证方式，目前支持 `none` 和 `service_http` 两种方式
@@ -88,8 +88,8 @@ app = Flask(__name__)
 api = Api(
     app,
     version="1.0",
-    title="Monkeys Weather API",
-    description="Monkeys Weather API",
+    title="AgentUniverse Weather API",
+    description="AgentUniverse Weather API",
 )
 
 @app.errorhandler(Exception)
@@ -131,7 +131,7 @@ python main.py
 这里我们使用 [https://open-meteo.com/](https://open-meteo.com/) 来作为天气查询的 API。
 
 注意以下代码中的:
-- `@weather_ns.vendor` 注解，这是 Monkeys 平台的扩展，用于描述 Tool 的详细信息，如输入、输出、估计耗时等。
+- `@weather_ns.vendor` 注解，这是 AgentUniverse 平台的扩展，用于描述 Tool 的详细信息，如输入、输出、估计耗时等。
 - `@weather_ns.expect` 注解，用于描述输入参数
 - `@weather_ns.response` 注解，用于描述输出参数
 
@@ -372,13 +372,13 @@ class WeatherLookUpResource(Resource):
 
 ![](~/assets/build-tools/example-app-api.png)
 
-### 导入 Monkeys 平台
+### 导入 AgentUniverse 平台
 
-将 Tools 导入到 Monkeys 平台，你只需要填入 Manifest JSON 的地址即可，这个示例中，我们的地址是 `http://localhost:5000/manifest.json`。
+将 Tools 导入到 AgentUniverse 平台，你只需要填入 Manifest JSON 的地址即可，这个示例中，我们的地址是 `http://localhost:5000/manifest.json`。
 
 ![](~/assets/build-tools/example-app-import.png)
 
-导入成功之后，你应该可以在 Monkeys 平台中看到你的 Tool 了。
+导入成功之后，你应该可以在 AgentUniverse 平台中看到你的 Tool 了。
 
 ![](~/assets/build-tools/get-weather-tool.png)
 

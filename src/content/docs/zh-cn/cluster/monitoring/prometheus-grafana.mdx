@@ -1,13 +1,13 @@
 ---
 title: Prometheus & Grafana 服务监控
-description: 使用 Prometheus & Grafana 监控 Monkeys 服务
+description: 使用 Prometheus & Grafana 监控 AgentUniverse 服务
 ---
 
-当你部署了 Monkeys 应用之后，你可以通过 Prometheus & Grafana 监控 Monkeys 服务的运行状态和性能指标。
+当你部署了 AgentUniverse 应用之后，你可以通过 Prometheus & Grafana 监控 AgentUniverse 服务的运行状态和性能指标。
 
-## Monkeys Server 指标
+## AgentUniverse Server 指标
 
-> Monkeys Server 是 Monkeys 的核心服务，对外暴露了 Node.js 应用的 CPU、内存、网络等指标。
+> AgentUniverse Server 是 AgentUniverse 的核心服务，对外暴露了 Node.js 应用的 CPU、内存、网络等指标。
 
 ### 演示效果
 
@@ -18,8 +18,8 @@ description: 使用 Prometheus & Grafana 监控 Monkeys 服务
 在 Prometheus 的配置文件中添加如下配置：
 
 - `global.scrape_interval`：监控间隔时间，推荐为 `5s`。
-- `scrape_configs[].metrics_path`： Monkeys Server 服务的 Prometheus 指标接口为 `/metrics`。
-- `scrape_configs[].static_configs[].targets`：Monkeys Server 服务的地址和端口，你可能需要根据部署的实际情况进行修改。
+- `scrape_configs[].metrics_path`： AgentUniverse Server 服务的 Prometheus 指标接口为 `/metrics`。
+- `scrape_configs[].static_configs[].targets`：AgentUniverse Server 服务的地址和端口，你可能需要根据部署的实际情况进行修改。
 
 ```yaml
 global:
@@ -52,7 +52,7 @@ scrape_configs:
 
 ## Conductor 指标
 
-> Conductor 是 Monkeys 的流程编排引擎，对外暴露了当前执行工作流数、已完成工作流数、失败工作流数、JVM 内存、数据库连接等指标。
+> Conductor 是 AgentUniverse 的流程编排引擎，对外暴露了当前执行工作流数、已完成工作流数、失败工作流数、JVM 内存、数据库连接等指标。
 
 ### 演示效果
 
@@ -2303,7 +2303,7 @@ scrape_configs:
 
 ## VLLM 指标
 
-> Monkeys 服务本身不会部署 vLLM，如果你自己使用 vLLM 部署了大模型，可以参考下面的方式。
+> AgentUniverse 服务本身不会部署 vLLM，如果你自己使用 vLLM 部署了大模型，可以参考下面的方式。
 
 ### 演示效果
 

@@ -1,11 +1,11 @@
 ---
 title: Developing Custom Tools
-description: Guide to developing custom tools for Monkeys
+description: Guide to developing custom tools for AgentUniverse
 ---
 
 ## Tool Definition
 
-Tools can extend the capabilities of the Monkeys platform. Some common tools include:
+Tools can extend the capabilities of the AgentUniverse platform. Some common tools include:
 
 - LLM: Provides large language model conversation capabilities
 - Knowledge Base: Provides knowledge base Q&A capabilities for LLM
@@ -15,7 +15,7 @@ Tools can extend the capabilities of the Monkeys platform. Some common tools inc
 - Image Generation: Provides image generation capabilities
 - Automation for social platforms like Xiaohongshu, Twitter, Instagram, Weibo, etc.
 
-Any service that can be called via API can be integrated as a tool into the Monkeys platform.
+Any service that can be called via API can be integrated as a tool into the AgentUniverse platform.
 
 ## How to Develop a Custom Tool
 
@@ -28,7 +28,7 @@ In general, developing a tool involves the following steps:
 1. Define your tool using JSON.
 2. Write the HTTP interface to implement your tool's logic.
 3. Deploy your tool.
-4. Add your tool to the Monkeys platform.
+4. Add your tool to the AgentUniverse platform.
 
 ## Example: Developing a Weather Tool using Python
 
@@ -55,7 +55,7 @@ pip install flask flask_restx requests
 The `manifest.json` endpoint describes the basic information of your tool:
 
 - schema_version: Current version, currently only `v1` is supported
-- display_name: The name displayed on the Monkeys platform
+- display_name: The name displayed on the AgentUniverse platform
 - namespace: Namespace to distinguish different tools, recommended to use the `monkey_tools_` prefix, such as `monkey_tools_my_awesome_weather_tool`. This namespace must be globally unique.
 - auth: 
   - type: Authentication method, currently supports `none` and `service_http`
@@ -88,8 +88,8 @@ app = Flask(__name__)
 api = Api(
     app,
     version="1.0",
-    title="Monkeys Weather API",
-    description="Monkeys Weather API",
+    title="AgentUniverse Weather API",
+    description="AgentUniverse Weather API",
 )
 
 @app.errorhandler(Exception)
@@ -130,7 +130,7 @@ You can then access `http://localhost:5000` in your browser to see the automatic
 Here we use [https://open-meteo.com/](https://open-meteo.com/) as the weather lookup API.
 
 Note the following in the code:
-- `@weather_ns.vendor` annotation, which is an extension for the Monkeys platform to describe detailed information about the tool, such as input, output, estimated time, etc.
+- `@weather_ns.vendor` annotation, which is an extension for the AgentUniverse platform to describe detailed information about the tool, such as input, output, estimated time, etc.
 - `@weather_ns.expect` annotation, which describes the input parameters
 - `@weather_ns.response` annotation, which describes the output parameters
 
@@ -370,13 +370,13 @@ Restart the service, and you should see your endpoint added to the Swagger API d
 
 ![](~/assets/build-tools/example-app-api.png)
 
-### Import to Monkeys Platform
+### Import to AgentUniverse Platform
 
-To import the tool into the Monkeys platform, simply provide the URL of the manifest JSON. In this example, the URL is `http://localhost:5000/manifest.json`.
+To import the tool into the AgentUniverse platform, simply provide the URL of the manifest JSON. In this example, the URL is `http://localhost:5000/manifest.json`.
 
 ![](~/assets/build-tools/example-app-import.png)
 
-After successful import, you should see your tool on the Monkeys platform.
+After successful import, you should see your tool on the AgentUniverse platform.
 
 ![](~/assets/build-tools/get-weather-tool.png)
 

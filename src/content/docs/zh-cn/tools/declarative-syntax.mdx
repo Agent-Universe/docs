@@ -3,9 +3,9 @@ title: 工具声明式语法
 description: 工具声明式语法
 ---
 
-在 Monkeys 的设计中，工具（Tools）就是一个（组）可被调用的、满足 [OpenAPI Specification](https://swagger.io/specification/) 标准的 API。
+在 AgentUniverse 的设计中，工具（Tools）就是一个（组）可被调用的、满足 [OpenAPI Specification](https://swagger.io/specification/) 标准的 API。
 
-工具通过 `manifest.json` 接口描述自身的元信息，比如名称、版本、描述、鉴权方式 、API 接口地址、限流配置等。Monkeys 通过解析 `manifest.json` 文件，自动构建工具的调用界面，用户可以通过界面配置工具的输入参数，然后调用工具执行任务。
+工具通过 `manifest.json` 接口描述自身的元信息，比如名称、版本、描述、鉴权方式 、API 接口地址、限流配置等。AgentUniverse 通过解析 `manifest.json` 文件，自动构建工具的调用界面，用户可以通过界面配置工具的输入参数，然后调用工具执行任务。
 
 工具还可以在工作流中被串联起来，形成一个流程，实现复杂的任务。
 

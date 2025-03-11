@@ -72,11 +72,11 @@ description: 使用 Helm Chart 一键安装
 
 ### Step 2：部署 tools
 
-> 在 Monkeys 的设计架构中，tools 为可插拔式组件，用于提供不同的功能，例如：沙箱工具、知识库工具、图像处理工具等等。你可以阅读[此文档](/docs/zh-cn/tools/build-custom-tools)了解为何开发自定义 tools
+> 在 AgentUniverse 的设计架构中，tools 为可插拔式组件，用于提供不同的功能，例如：沙箱工具、知识库工具、图像处理工具等等。你可以阅读[此文档](/docs/zh-cn/tools/build-custom-tools)了解为何开发自定义 tools
 
 每个 Tools 的详细部署文档请见: [https://github.com/inf-monkeys/monkeys-cloud/tree/main/helm/charts/community/tools](https://github.com/inf-monkeys/monkeys-cloud/tree/main/helm/charts/community/tools)
 
-### Step 3: 在 Monkeys 控制台导入上述部署的 tools
+### Step 3: 在 AgentUniverse 控制台导入上述部署的 tools
 
 - 进入控制台，此时需要初始化一个账号，可输入任意一个邮箱即可。
 - 在**执行类工具**页面，点击右上角的**导入**按钮，分别输入 tools 的 manifest 地址（格式为 `http://对应SERVICE地址:SERVICE_PORT/manifest.json`）

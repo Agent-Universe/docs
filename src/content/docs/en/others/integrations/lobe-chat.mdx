@@ -3,11 +3,11 @@ title: Integrate with Lobe Chat
 description: Integrate with Lobe Chat
 ---
 
-This document describes how to integrate Monkeys' OpenAI-compatible large language model interface into [Lobe Chat](https://github.com/lobehub/lobe-chat). For installation instructions of Lobe Chat, please refer to its official documentation.
+This document describes how to integrate AgentUniverse' OpenAI-compatible large language model interface into [Lobe Chat](https://github.com/lobehub/lobe-chat). For installation instructions of Lobe Chat, please refer to its official documentation.
 
-Here we take the [https://huggingface.co/alpindale/c4ai-command-r-plus-GPTQ](https://huggingface.co/alpindale/c4ai-command-r-plus-GPTQ) model deployed through VLLM as an example. We will first integrate it into the Monkeys workflow, exposing a standard OpenAI interface, and then integrate it into Lobe Chat.
+Here we take the [https://huggingface.co/alpindale/c4ai-command-r-plus-GPTQ](https://huggingface.co/alpindale/c4ai-command-r-plus-GPTQ) model deployed through VLLM as an example. We will first integrate it into the AgentUniverse workflow, exposing a standard OpenAI interface, and then integrate it into Lobe Chat.
 
-### 1. Create a large language model workflow in the Monkeys console
+### 1. Create a large language model workflow in the AgentUniverse console
 
 For detailed steps on creating a workflow, see [Built-in Tools (Large Language Models)](/docs/en/tools/builtin-tools-large-language-models).
 
@@ -19,7 +19,7 @@ There are a few points to note:
 
 2. In the **API Settings** of the **Start** node, set the *Model Name* to the desired model name. Here we set it to `command-r`.
 
-> By default, the `model` parameter of Monkeys' OpenAI interface corresponds to the workflow ID. You can modify this value to set the model name. (Model names must be unique within the same team)
+> By default, the `model` parameter of AgentUniverse' OpenAI interface corresponds to the workflow ID. You can modify this value to set the model name. (Model names must be unique within the same team)
 
 ![Set Model Name](~/assets/others/integrations/lobe-chat/config-model-name.png)
 
@@ -35,10 +35,10 @@ Here we add a customer service corpus:
 
 In the **Language Model** settings of Lobe Chat, enable the OpenAI interface and fill in the following information:
 
-- **API Key**: Monkeys' API Key, which can be created or obtained on the settings page.
-- **API Proxy Address**: Fill in the address of the Monkeys service, with the `/v1` suffix.
+- **API Key**: AgentUniverse' API Key, which can be created or obtained on the settings page.
+- **API Proxy Address**: Fill in the address of the AgentUniverse service, with the `/v1` suffix.
 
-![Import Monkeys Interface](~/assets/others/integrations/lobe-chat/import-monkeys-api.png)
+![Import AgentUniverse Interface](~/assets/others/integrations/lobe-chat/import-monkeys-api.png)
 
 #### Fetch Model List
 
@@ -50,7 +50,7 @@ Click the **Get Model List** button and select the models you need.
 
 Lobe Chat will use the `gpt-3.5-turbo` model for connectivity testing by default. If your team has not configured the `gpt-3.5-turbo` model, the test will fail. You can skip this step.
 
-### 3. Use Monkeys' large language model interface in Lobe Chat
+### 3. Use AgentUniverse' large language model interface in Lobe Chat
 
 Select the previously created model:
 

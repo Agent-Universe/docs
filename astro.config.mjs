@@ -27,7 +27,7 @@ export default defineConfig({
 			logo: {
 				src: 'src/assets/favicon.png',
 			},
-			title: 'Monkeys',
+			title: 'AgentUniverse',
 			editLink: {
 				baseUrl: 'https://github.com/monkeys/docs',
 			},
@@ -44,9 +44,9 @@ export default defineConfig({
 				},
 			],
 			customCss: ['src/tailwind.css', 'src/styles/landing.css', '@fontsource-variable/figtree'],
-			social: {
-				github: 'https://github.com/inf-monkeys/monkeys',
-			},
+			// social: {
+			// 	github: 'https://github.com/inf-monkeys/monkeys',
+			// },
 			defaultLocale: 'zh-cn',
 			locales,
 			sidebar: [

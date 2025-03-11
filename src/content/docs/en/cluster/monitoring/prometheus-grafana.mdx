@@ -1,13 +1,13 @@
 ---
 title: Prometheus & Grafana Monitoring
-description: Using Prometheus & Grafana to monitor Monkeys services
+description: Using Prometheus & Grafana to monitor AgentUniverse services
 ---
 
-After deploying the Monkeys application, you can monitor the running status and performance metrics of Monkeys services using Prometheus & Grafana.
+After deploying the AgentUniverse application, you can monitor the running status and performance metrics of AgentUniverse services using Prometheus & Grafana.
 
-## Monkeys Server Metrics
+## AgentUniverse Server Metrics
 
-> Monkeys Server is the core service of Monkeys, exposing metrics such as CPU, memory, and network of the Node.js application.
+> AgentUniverse Server is the core service of AgentUniverse, exposing metrics such as CPU, memory, and network of the Node.js application.
 
 ### Demonstration
 
@@ -18,8 +18,8 @@ After deploying the Monkeys application, you can monitor the running status and 
 Add the following configuration to the Prometheus configuration file:
 
 - `global.scrape_interval`: Monitoring interval, recommended to be `5s`.
-- `scrape_configs[].metrics_path`: The Prometheus metrics endpoint for Monkeys Server is `/metrics`.
-- `scrape_configs[].static_configs[].targets`: The address and port of the Monkeys Server service, you may need to modify it according to the actual deployment.
+- `scrape_configs[].metrics_path`: The Prometheus metrics endpoint for AgentUniverse Server is `/metrics`.
+- `scrape_configs[].static_configs[].targets`: The address and port of the AgentUniverse Server service, you may need to modify it according to the actual deployment.
 
 ```yaml
 global:
@@ -50,7 +50,7 @@ scrape_configs:
 
 ## Conductor Metrics
 
-> Conductor is the workflow orchestration engine used by Monkeys, exposing metrics such as the number of currently running workflows, completed workflows, failed workflows, JVM memory, database connections, etc.
+> Conductor is the workflow orchestration engine used by AgentUniverse, exposing metrics such as the number of currently running workflows, completed workflows, failed workflows, JVM memory, database connections, etc.
 
 ### Demonstration
 

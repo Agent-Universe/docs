@@ -3,7 +3,7 @@ import starlight from '@astrojs/starlight';
 import starlightLinksValidator from 'starlight-links-validator';
 import tailwind from '@astrojs/tailwind';
 
-const site = 'https://inf-monkeys.github.io';
+const site = 'https://agent-universe.github.io';
 const locales = {
 	en: {
 		label: 'English',
@@ -15,7 +15,7 @@ const locales = {
 	},
 };
 
-// https://astro.build/config
+// https://astro.build/config`
 export default defineConfig({
 	site,
 	base: '/docs',
